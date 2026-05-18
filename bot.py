@@ -89,8 +89,8 @@ async def main():
     check_db()
 
     scheduler = AsyncIOScheduler()
-    scheduler.add_job(send_morning_report, 'cron', hour=20, minute=25)  
-    scheduler.add_job(send_tomorrow_report, 'cron', hour=20, minute=26)
+    scheduler.add_job(send_morning_report, 'cron', hour=9, minute=0)  
+    scheduler.add_job(send_tomorrow_report, 'cron', hour=21, minute=0)
     scheduler.start()
 
     await dp.start_polling(bot)
